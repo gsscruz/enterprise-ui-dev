@@ -11,8 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      -name: Check out to the repo
+        uses: actions/checkout@v3
       - name: Setup Node
         uses: actions/setup-node@v3
       - run: npm ci
       - run: npm test
+  build:
+    steps:
+      -run: npm run build
+
